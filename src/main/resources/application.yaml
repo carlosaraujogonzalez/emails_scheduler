@@ -1,0 +1,30 @@
+server:
+  port: 8082
+
+emails:
+  server:
+    path: http://localhost:8080
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+spring:
+  application:
+    name: scheduler
+  main:
+    allow-bean-definition-overriding: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+email:
+  rabbitmq:
+    exchange: email.exchange
+    queue: email.queue
+    routingkey: email.routingkey
