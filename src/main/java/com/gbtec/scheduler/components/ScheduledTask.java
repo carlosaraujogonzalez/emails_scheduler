@@ -16,8 +16,8 @@ public class ScheduledTask{
     @Autowired
     private SchedulerService schedulerService;
 
-    //@Scheduled(cron = "0 10 * * * ?")
-    @Scheduled(fixedRate = 60000)
+    @Scheduled(cron = "0 10 * * * ?")
+    //@Scheduled(fixedRate = 60000)
     public void scheduleSpamUpdate() {
 
             schedulerService.markAsSpam();
